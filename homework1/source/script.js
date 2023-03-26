@@ -21,10 +21,15 @@ test === true ? console.log('+++') : console.log('---');
 // // Задание 3
 // // В переменной day лежит какое-то число из интервала от 1 до 31. Определите в какую декаду месяца попадает это число (в первую, вторую или третью).
 
-let monthDay = Math.random(1, 31);
-if (monthDay >= 1 && monthDay > 10) {
+function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+let monthDay = Math.trunc(getRandomArbitrary(1, 32));
+console.log(monthDay)
+if (monthDay > 0 && monthDay <= 10) {
     console.log('Первая декада')
-} else if (monthDay >= 10 && monthDay > 20) {
+} else if (monthDay > 10 && monthDay <= 20) {
     console.log('Вторая декада')
 } else {
     console.log('третья декада')
@@ -57,4 +62,4 @@ let userNumber = prompt('Введите любое положительое чи
 let userNumberCut = userNumber % 1000;
 alert(`Сотен в числе ${userNumber} - ${Math.trunc(userNumberCut / 100)},
 Десятков в числе ${userNumber} - ${Math.trunc(userNumberCut / 10 %10)},
-Единиц в числе ${userNumber} - ${userNumberCut%10}`);
+Единиц в числе ${userNumber} - ${userNumberCut%10}`)
